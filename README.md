@@ -128,7 +128,7 @@ letter shell 支持两种形式的函数定义方式，形如main函数定义的
 使用此方式，一个函数定义的例子如下：
 
 ```C
-func(int argc, char *agrv[])
+func(int argc, char *argv[])
 {
     printf("%dparameter(s)\r\n", argc);
     for (char i = 1; i < argc; i++)
