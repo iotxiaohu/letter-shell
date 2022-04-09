@@ -98,7 +98,7 @@
      *
      * @return unsigned short 实际读取到的字符数量
      */
-    typedef unsigned short (*shellRead)(char *data, unsigned short len);
+    typedef signed short (*shellRead)(char *data, unsigned short len);
 
     /**
      * @brief shell写数据函数原型
@@ -108,7 +108,7 @@
      *
      * @return unsigned short 实际写入的字符数量
      */
-    typedef unsigned short (*shellWrite)(char *data, unsigned short len);
+    typedef signed short (*shellWrite)(char *data, unsigned short len);
     ```
 
 3. 申请一片缓冲区
@@ -138,7 +138,7 @@
 6. 说明
 
    - 对于中断方式使用shell，不用定义`shell->read`，但需要在中断中调用`shellHandler`
-   - 对于使用操作系统的情况，使能`SHEHLL_TASK_WHILE`宏，然后创建shellTask任务
+   - 对于使用操作系统的情况，使能`SHELL_TASK_WHILE`宏，然后创建shellTask任务
 
 7. 其他配置
 
